@@ -13,7 +13,7 @@ public class StopWatch implements ActionListener{
     int minutes = 0;
     int hours = 0;
     boolean started = false;
-    String miniSeconds_string = String.format("%02d",elapsedTime);
+  //  String miniSeconds_string = String.format("%02d",elapsedTime);
     String seconds_string = String.format("%02d",seconds);
     String minutes_string = String.format("%02d",minutes);
     String hours_string = String.format("%02d",hours);
@@ -25,31 +25,31 @@ public class StopWatch implements ActionListener{
             minutes=(elapsedTime/60000)%60;
             seconds =(elapsedTime/1000)%60;
 
-             miniSeconds_string = String.format("%02d",elapsedTime);
+        //     miniSeconds_string = String.format("%02d",elapsedTime);
              seconds_string = String.format("%02d",seconds);
              minutes_string = String.format("%02d",minutes);
              hours_string = String.format("%02d",hours);
-             timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string+":"+minutes_string);
+             timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string/*+":"+miniSeconds_string*/);
         }
     });
 
 
     public StopWatch() {
 
-        timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string+":"+miniSeconds_string);
+        timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string/*+":"+miniSeconds_string*/);
         timeLabel.setBounds(50,100,300,100);
-        timeLabel.setFont(new Font("Verdana",Font.PLAIN,35));
+        timeLabel.setFont(new Font("Verdana",Font.PLAIN,55));
         timeLabel.setBorder(BorderFactory.createBevelBorder(1));
         timeLabel.setOpaque(true);
         timeLabel.setHorizontalAlignment(JTextField.CENTER);
 
         startButton.setBounds(50,200,150,50);
-        startButton.setFont(new Font("Verdana",Font.PLAIN,20));
+        startButton.setFont(new Font("Verdana",Font.PLAIN,25));
         startButton.setFocusable(false);
         startButton.addActionListener(this);
 
         resetButton.setBounds(200,200,150,50);
-        resetButton.setFont(new Font("Verdana",Font.PLAIN,20));
+        resetButton.setFont(new Font("Verdana",Font.PLAIN,25));
         resetButton.setFocusable(false);
         resetButton.addActionListener(this);
 
@@ -102,11 +102,11 @@ public class StopWatch implements ActionListener{
         seconds=0;
         minutes=0;
         hours=0;
-        miniSeconds_string = String.format("%02d",elapsedTime);
+     //   miniSeconds_string = String.format("%02d",elapsedTime);
         seconds_string = String.format("%02d",seconds);
         minutes_string = String.format("%02d",minutes);
         hours_string = String.format("%02d",hours);
-        timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string+":"+minutes_string);
+        timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string/*+":"+miniSeconds_string*/);
 
 
     }
